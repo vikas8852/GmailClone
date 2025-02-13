@@ -27,6 +27,7 @@ const Login = () => {
             withCredentials:true
           })
           if(res.data.success){
+          //  console.log(res.data.user)
             dispatch(setAuthUser(res.data.user))  // user return at time of login whn it succssfull
            navigate("/");    //if login success then it move to home page
            toast.success(res.data.message) // us to show pop lik message of success

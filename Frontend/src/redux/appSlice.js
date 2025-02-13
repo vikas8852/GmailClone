@@ -4,14 +4,14 @@ const appSlice=createSlice({
     name:"app",
     initialState:{
         open:false,
-        user:null
+        user:null,
     },
     reducers:{
         setOpnen:(state,action)=>{
             state.open=action.payload
         },
         setAuthUser:(state,action)=>{
-            state.open=action.payload
+            state.user=action.payload
         }
        
     }

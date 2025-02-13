@@ -6,9 +6,12 @@ import { CiCircleQuestion } from "react-icons/ci";
 import { IoMdSettings } from "react-icons/io";
 import { TbGridDots } from "react-icons/tb";
 import Avatar from "react-avatar";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const user = false;
+    const {user}=useSelector(store =>store.app);
+   // console.log(user);
+  
   return (
     <div className="flex items-center justify-between mx-3 h-16">
       <div className="flex items-center gap-10">
@@ -48,7 +51,7 @@ const Navbar = () => {
             </div>
             <Avatar
               className=""
-              src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              src={user.profilePhoto}
               size="35"
               round={true}
             />
