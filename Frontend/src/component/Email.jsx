@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { MdCropSquare } from 'react-icons/md'
@@ -5,6 +6,7 @@ import { FaRegStar } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setSelctedEmail } from '../redux/appSlice';
+import { formatDistanceToNow } from 'date-fns';
 
 const Email = ({email}) => {
     const navigate=useNavigate();
@@ -31,7 +33,7 @@ const Email = ({email}) => {
      <p>{email?.message}</p>
     </div>
     <div  className='flex-none text-gray text-sm'>
-     <p> 12 days ago</p>
+    <p>{email?.createdAt ? formatDistanceToNow(new Date(email.createdAt), { addSuffix: true }) : 'No time available'}</p>
     </div>
    
   </div>

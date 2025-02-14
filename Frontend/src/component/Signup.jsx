@@ -32,11 +32,11 @@ const Signup = () => {
        }
        catch(err){
         console.log(err);
-        toast.success(err.response.data.message)
+        toast.error(err.response.data.message)
        }
     }
   return (
-    <div className='flex items-center justify-center w-screen mt-10'>
+    <div className='flex items-center justify-center w-screen h-screen'>
     <form onSubmit={submitHandler} className='flex flex-col gap-3 bg-white p-4 w-[20%]'>
     <h1 className='text-2xl my-2 font-medium' >Signup</h1>
     <input onChange={changeHandler} value={input.fullname} name='fullname' type="text" placeholder='Name' className='border border-gray-400 rounded-md px-2 py-1' />

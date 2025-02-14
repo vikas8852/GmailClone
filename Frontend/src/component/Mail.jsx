@@ -31,7 +31,7 @@ const Mail = () => {
     }
     catch(err){
       console.log(err);
-      toast.success(err.response.data.message)
+      toast.error(err.response.data.message)
     }
 
   }
