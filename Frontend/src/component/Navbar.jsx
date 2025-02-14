@@ -25,6 +25,9 @@ const Navbar = () => {
         withCredentials: true,
       });
       toast.success(res.data.message);
+      // Logout logic
+      localStorage.removeItem("token");
+
       dispatch(setAuthUser(null));
       navigate("/login");
     } catch (err) {
