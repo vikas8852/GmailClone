@@ -1,17 +1,22 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosSearch } from "react-icons/io";
 import { CiCircleQuestion } from "react-icons/ci";
 import { IoMdSettings } from "react-icons/io";
 import { TbGridDots } from "react-icons/tb";
 import Avatar from "react-avatar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchText } from "../redux/appSlice";
 
 const Navbar = () => {
+   const[text,setText]=useState('');
     const {user}=useSelector(store =>store.app);
+    const dispatch=useDispatch();
    // console.log(user);
-  
+  useEffect(()=>{
+    dispatch(setSearchText(text));
+  },[text])
   return (
     <div className="flex items-center justify-between mx-3 h-16">
       <div className="flex items-center gap-10">
@@ -30,10 +35,12 @@ const Navbar = () => {
       {user && (
         <>
           <div className="w-[50%] mr-60 ">
-            <div className="flex items-center bg-[#EAF1FB] px-2 py-3 rounded-full">
+            <div className="flex items-center bg-[#dae1eb] px-2 py-3 rounded-full">
               <IoIosSearch size={"24px"} className="text-gray-700" />
               <input
                 type="text"
+                value={text}
+                onChange={(e)=>setText(e.target.value)}
                 placeholder="Search Mail"
                 className="rounded-full w-full bg-transparent outline-none px-1"
               />
