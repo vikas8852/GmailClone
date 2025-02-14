@@ -1,8 +1,8 @@
 //import { useState } from 'react'
-import { createBrowserRouter, Navigate, RouterProvider, useNavigate } from "react-router-dom";
+import { createBrowserRouter,  RouterProvider,  } from "react-router-dom";
 import "./App.css";
 import Inbox from "./component/Inbox";
-import Navbar from "./component/Navbar";
+
 //import Sidebar from "./component/Sidebar";
 import Body from "./component/Body";
 import Mail from "./component/Mail";
@@ -10,12 +10,17 @@ import SentEmail from "./component/SentEmail";
 import Login from "./component/Login";
 import Signup from "./component/Signup";
 import { Toaster } from "react-hot-toast";
-import { useSelector } from "react-redux";
+import ProtectedRoute from "./component/ProtectedRoute";
+
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Body />,
+    element:(
+      <ProtectedRoute>
+      <Body />
+    </ProtectedRoute>
+    ),
     children: [
       //constant component that will need to diplay all time  instead change occure
       {
@@ -41,10 +46,6 @@ const appRouter = createBrowserRouter([
 ]);
 
 function App() {
- // const navigate=useNavigate();
-  //const [count, setCount] = useState(0)
-  
-
   return (
     <div className="bg-[#edeff4] h-screen">
    
