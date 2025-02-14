@@ -5,6 +5,8 @@ const appSlice=createSlice({
     initialState:{
         open:false,
         user:null,
+        emails:[],
+        selectedEmail:null
     },
     reducers:{
         setOpnen:(state,action)=>{
@@ -12,9 +14,15 @@ const appSlice=createSlice({
         },
         setAuthUser:(state,action)=>{
             state.user=action.payload
+        },
+        setEmail:(state,action)=>{
+            state.emails=action.payload
+        },
+        setSelctedEmail:(state,action)=>{
+            state.selectedEmail=action.payload
         }
        
     }
 })
-export const {setOpnen,setAuthUser}=appSlice.actions;
+export const {setOpnen,setAuthUser,setEmail,setSelctedEmail}=appSlice.actions;
 export default appSlice.reducer;
