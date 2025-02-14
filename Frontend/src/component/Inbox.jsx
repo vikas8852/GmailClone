@@ -60,8 +60,8 @@ const Inbox = () => {
                 className={` ${
                   selected === index
                     ? "border-b-4 border-b-blue-600 text-blue-600"
-                    : "border-b-4 border-b-transparent text-blue-600"
-                }flex items-center gap-5 p-4 w-52 hover:bg-gray-200`}
+                    : "border-b-4 border-b-transparent "
+                } flex items-center gap-5 p-4 w-52 hover:bg-gray-200`}
               >
                 {item.icon}
                 <span>{item.text}</span>
