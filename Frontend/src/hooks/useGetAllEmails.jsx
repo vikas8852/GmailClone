@@ -11,7 +11,7 @@ const useGetAllEmails=()=>{
         const fetchEmails=async()=>{
             try {
                 const res = await axios.get(
-                  "http://localhost:6060/api/v1/email/getAllEmails",{
+                  `${import.meta.env.VITE_API_URL}/api/v1/email/getAllEmails`,{
                     withCredentials:true
                   })
         

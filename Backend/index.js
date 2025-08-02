@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser());
 const corsOption={
-    origin:'http://localhost:5173',  //connect to that only fronted requsted
+    origin:process.env.FORNTEND_URI,  //connect to that only fronted requsted
     credentials:true
 }
 app.use(cors(corsOption))

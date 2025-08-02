@@ -23,7 +23,7 @@ const Mail = () => {
   const{selectedEmail}=useSelector(store=>store.app);
   const deleteHandler=async()=>{
     try{
-     const res=await axios.delete(`http://localhost:6060/api/v1/email/${params.id}`,{
+     const res=await axios.delete(`${import.meta.env.VITE_API_URL}/api/v1/email/${params.id}`,{
       withCredentials:true
      })
      toast.success(res.data.message)

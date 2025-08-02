@@ -18,7 +18,7 @@ const Signup = () => {
         e.preventDefault();
         console.log(input);
        try{
-          const res=await axios.post("http://localhost:6060/api/v1/user/register",input,{
+          const res=await axios.post(`${import.meta.env.VITE_API_URL}/api/v1/user/register`,input,{
             headers:{
                 'Content-Type':'application/json'
             },
