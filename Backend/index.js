@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 const corsOption={
     origin:process.env.FORNTEND_URI,  //connect to that only fronted requsted
-    credentials:true
+    credentials: true    
 }
 app.use(cors(corsOption))
 //routes
